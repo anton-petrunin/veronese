@@ -8,6 +8,7 @@
 %\usepackage[notref,notcite,color]{showkeys}
 
 
+
 \def\thetitle{Mildly curved submanifolds in a ball}
 \def\theauthors{Anton Petrunin}
 
@@ -30,9 +31,8 @@ pdfauthor={\theauthors}
 
 
 %\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
-
 %\overfullrule=100mm
-
+%\usepackage[none]{hyphenat}
 \begin{document}
 %\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
 
@@ -126,7 +126,7 @@ Let us show that the function $u\mapsto r(u)$ is smooth.
 In other words, $\gamma_u$ intersects $\Pi$ transversely at time $r(u)$.
 Assume this is not the case, so $\gamma_u$ is tangent to $\Pi$ at $r(u)$.
 Let $\hat\gamma_u$ be the concatenation of the reflection of $\gamma_u|_{[0,r(u)]}$ across $\Pi$ and $\gamma_u|_{[r(u),\frac\pi2]}$.
-Note that $\hat \gamma_u$ is $C^1$-smooth and it is $C^\infty$-smooth everywhere except $r(u)$.
+Note that $\hat \gamma_u$ is $C^1$-smooth, and it is $C^\infty$-smooth everywhere except $r(u)$.
 Therefore, Schur's bow lemma is applicable to~$\hat \gamma_u$, and hence, $|y-z|>1$.
 Again, all sides of triangle $[xyz]$ are larger than $1$;
 hence, it cannot lie in $\BB^d$ --- a contradiction.  
@@ -155,120 +155,114 @@ Hence $M$ is homeomorphic to the $n$-sphere.
 \qeds
 
 \paragraph{Veronese embeddings.}\label{thm:=}
-The real, complex, quaternionic, and octonionic projective planes will be denoted by
-$\RP^2$, $\CP^2$, $\HP^2$, and $\OP^2$, respectively.
-We assume that each of these planes is equipped with the canonical metric;
-it has closed geodesics of length $\pi$ and therefore its sectional curvature is in the range $[1,4]$.
-
-\begin{thm}{Proposition}
-There are smooth isometric embeddings
-\begin{align*}
-\RP^2& \hookrightarrow\RR^5 , 
-&
-\CP^2& \hookrightarrow\RR^8,
-&
-\HP^2& \hookrightarrow\RR^{14}, 
-&
-\OP^2& \hookrightarrow\RR^{26}
-\end{align*}
-that maps each geodesic to a round circle. 
-\end{thm}
-
-This proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
-The embeddings provided by the proposition will be called \emph{Veronese embeddings}.
-From the proof below it will follow that the properties in the proposition uniquely describe
-Veronese embeddings up to isometric inclusion.
-
-The Veronese embeddings have a very explicit algebraic description and many nice geometric properties.
-In particular,
-these embeddings are equivariant,
-their images lie in spheres of radius $1/\sqrt3$,
-and they are minimal submanifolds in these spheres.
-All of this is discussed in the cited paper by Kunio Sakamoto.
- 
-
- 
-
-\begin{thm}{Rigidity theorem}
-Let $\BB^d$ be $\tfrac1{\sqrt{3}}$ ball in $\RR^d$.
-Suppose a closed manifold $M$ admits a smooth embedding $f$ with normal curvatures at most $2$ in $\BB^d$ for some~$d$.
-If $M$ is not diffeomorphic to a sphere, then it is isometric to $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
-Moreover, $f$ can be written as one of the following compositions
-\begin{align*}
-\RP^2& \hookrightarrow\RR^5 \hookrightarrow\RR^d, 
-&
-\CP^2& \hookrightarrow\RR^8 \hookrightarrow\RR^d,
-\\
-\HP^2& \hookrightarrow\RR^{14} \hookrightarrow\RR^d, 
-&
-\OP^2& \hookrightarrow\RR^{26} \hookrightarrow\RR^d;
-\end{align*}
-in each composition the first map is the Veronese embedding, and the second map is an isometric inclusion. 
-
-
-\end{thm}
-
-The proof is an application of the following theorem.
-In a weaker form,
-it was proved by Detlef Gromoll and Karsten Grove \cite{gromoll-grove};
+Our next result is an application of the following theorem;
+its weaker form was proved by Detlef Gromoll and Karsten Grove \cite{gromoll-grove}, and
 the final step was made by Burkhard Wilking \cite{wilking}.
 
 \begin{thm}{Gromoll--Grove--Wilking theorem}\label{thm:GGW}
 Let $M$ be a compact Riemannian manifold with sectional curvature at least $1$ and
 diameter at least $\tfrac\pi2$.
-If $M$ is not homeomorphic to a sphere, then it is locally isometric to a rank-one symmetric space.
+If $M$ is not homeomorphic to a sphere, then its Riemannian universal cover is isometric to a compact rank-one symmetric space.
 \end{thm}
 
-\parit{Proof of the rigidity theorem.}
-Assume $M$ is not a sphere.
+Recall that simply connected compact rank-one symmetric spaces include round spheres $\mathbb{S}^n$, complex and quaternionic projective spaces $\CP^n$ and $\HP^n$, and octonionic projective plane $\OP^2$.
+(We will also need the real projective space $\RP^n$, which is a quotient of $\mathbb{S}^n$.)
+Let us assume that each of these spaces is equipped with the canonical metric;
+so spheres have constant sectional curvature $1$ and the sectional curvature of projective spaces is in the range $[1,4]$.
+In particular, all the projective spaces including $\RP^n$ have closed geodesics of length~$\pi$.
+
+\begin{thm}{Proposition}
+There are smooth isometric embeddings
+\begin{itemize}
+ \item $\RP^n \hookrightarrow\RR^d$ for $d\ge n+\tfrac12\cdot n\cdot(n+1)$;
+ \item $\CP^n \hookrightarrow\RR^d$ for $d\ge n+n\cdot(n+1)$;
+ \item $\HP^n \hookrightarrow\RR^d$ for $d\ge n+2\cdot n\cdot(n+1)$;
+ \item $\OP^2 \hookrightarrow\RR^d$ for $d\ge 26$;
+\end{itemize}
+that map each geodesic to a round circle.
+
+In particular, all normal curvatures of the images of these embeddings are equal to $2$.
+Moreover, the images of these embeddings lie in a sphere of radius $r=\sqrt{n/(2\cdot n+2)}$ (for $\OP^2$, we assume that $n=2$). 
+\end{thm}
+
+The proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
+The embeddings provided by the proposition will be called \emph{Veronese embeddings}.
+From the proof below it will be clear that the properties in the proposition uniquely describe
+Veronese embeddings up to motion of ambient space.
+
+The Veronese embeddings have a very explicit algebraic description and many nice geometric properties.
+In particular,
+these embeddings are equivariant, and 
+their images are minimal submanifolds in the described spheres.
+All of this is discussed in the cited paper by Kunio Sakamoto.
+ 
+Now we are ready to formulate our result.
+
+\begin{thm}{Rigidity theorem}
+Let $M$ be a closed smooth $n$-dimensional submanifold in a closed $r$-ball in $\RR^d$.
+Suppose that the normal curvatures of $M$ are at most $\tfrac2{\sqrt{3}}\cdot\tfrac1r$.
+If $M$ is not homeomorphic to a sphere, then up to rescaling, it is congruent to an image of the Veronese embedding of a projective plane $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
+\end{thm}
+
+\parit{Proof.}
+Assume $M$ is not homeomorphic to a sphere;
+in this case, $\dim M\ge 2$.
+As before, $\BB^d$ will denote the $r$-ball in $\RR^d$, and we assume that $r=\tfrac1{\sqrt{3}}$;
+therefore, the normal curvatures of $M$ are at most $2$.
+
+
 
 Choose a unit-speed geodesic $\gamma\:[0,\tfrac\pi2]\to M$;
 let $x=\gamma(0)$ and $y=\gamma(\tfrac\pi2)$.
 The argument in our sphere theorem implies that $|x-y|=1$.
 The rigidity case in the bow lemma implies that $\gamma$ is a half-circle of curvature $2$.
-Since any two points in $M$ can be connected by a geodesic, we get
+Since any two points in $M$ can be connected by a geodesic, we get the following.
 \begin{itemize}
- \item the diameter of $M$ is 1,
- \item the intrinsic diameter and injectivity radius of $M$ are equal to $\tfrac\pi2$,
- \item all geodesics in $M$ are circles of curvature 2.
+ \item The diameter of $M$ is 1.
+ \item The intrinsic diameter and injectivity radius of $M$ are equal to $\tfrac\pi2$.
+ \item All geodesics in $M$ are circles of curvature 2 in $\RR^d$.
 \end{itemize}
 
 Furthermore, for $x$ and $y$ as above,
 there is another point $z\in M$ such that $|x-z|=|y-z|=1$.
-If not, then again, the argument in our sphere theorem would imply that $M$ is a sphere.
+If not, then again, the argument in the sphere theorem would imply that $M$ is a sphere.
 But since $x,y,z\in\BB^d$,
 the equalities $|x-y|=|y-z|=|x-z|=1$ imply that $x\in \partial \BB^d$.
 
 The choice of $x\in M$ was arbitrary.
 Therefore, $M$ lies in the sphere $\partial \BB^d$ of radius $r=1/\sqrt{3}$.
 This sphere has sectional curvature $1/r^2=3$;
-the normal curvatures of $M$ in the sphere are $\sqrt{2^2-1/r^2}=1$.
-By the Gauss formula \cite[Lemma 5]{petrunin2024}, the sectional curvatures of $M$ are at least $3-2\cdot 1^2=1$.
+the normal curvatures of $M$ in the sphere are $\kappa=\sqrt{2^2-1/r^2}=1$.
+By the Gauss formula \cite[Lemma 5]{petrunin2024}, the sectional curvatures of $M$ are at least $3-2\cdot \kappa^2=1$.
 
 By the Gromoll--Grove--Wilking theorem, the universal cover $\tilde M$ of $M$ is isometric to a rank-one symmetric space.
-Let us show that $\tilde M$ is either $\mathbb{S}^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
-Indeed, from above, the diameter of $\tilde M$ must be multiple of $\tfrac\pi2$ and it must have exactly 3 points on distance $\tfrac\pi2$; it excludes all other choices.
+Taking into account the injectivity radius and curvature of $M$, we get that $\tilde M$ must be isometric to one of the following spaces
+$\tfrac12\cdot \SSS^n$, $\SSS^n$, $\CP^n$, $\HP^n$ for some $n$, or $\OP^2$.
+Note that the points $x,y,z\in M$ constructed above lie at an intrinsic distance $\tfrac\pi2$ from each other.
+It forbids $\tfrac12\cdot \SSS^n$ for every $n$.
+Furthermore if $n\ge 3$, then each space  $\SSS^n$, $\CP^n$ and $\HP^n$ contain 4 points at a distance $\tfrac\pi2$ from each other.
+Since the injectivity radius of $M$ is $\tfrac\pi2$, their projections in $M$ must lie at a distance $\tfrac\pi2$ from each other as well.
+It follows that $\BB^d$ must contain 4 points at a distance 1 from each other, which is impossible.
+
+Hence, $\tilde M$ must be isometric to one of the following spaces $\mathbb{S}^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
 Since the injectivity radius of $M$ is $\tfrac\pi2$, 
 it has to be isometric to $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
 
-We can assume that $d>26$;
-denote by $v\:M\hookrightarrow \RR^d$ the corresponding Veronese embedding;
-that is, $v$ is a composition of Veronese embedding and isometric inclusion $M\hookrightarrow \RR^m\hookrightarrow \RR^d$, where $m=5$, $8$, $14$, or $26$ for $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$, respectively.
+Denote by $M'\subset \RR^d$ the image of the corresponding Veronese embedding provided by the proposition.
+Without loss of generality, we can assume that $d>26$, so $M'$ exists.
 
-Recall that the second fundamental form is a bilinear symmetric form on tangent space with values in the normal space.
-Assume that there is a motion $\iota$ of $\RR^d$ such that for some point $p\in M$ we have 
-\[f(p)=\iota\circ v(p),\qquad \T_{f(p)}[f(M)]\z=\T_{f(p)}[\iota\circ v(M)],\]
-and the second fundamental forms of $f$ and $v$ at $p$ coincide.
-Then $f(M)\z=\iota\circ v(M)$.
-Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction $w\in \T_p$ is completely described by $\II(w,w)$.
-And these circles sweep the image of the whole $M$.
+Recall that the second fundamental form $\II$ is a bilinear symmetric form on the tangent space with values in the normal space.
+Assume there is a point $p\z\in M\cap M'$ such that $\T_pM=\T_pM'$ and the second fundamental forms of $M$ and $M'$ at $p$ coincide.
+Then $M'\z=M$.
+Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction $X\in \T_p$ is completely described by $\II(X,X)$.
+And these circles sweep the whole $M$ and $M'$.
 
-Recall that extrinsic curvature tensor $\Phi$ is defined as
+Recall that the extrinsic curvature tensor $\Phi$ is defined as
 \[\Phi(X,Y,V,W)=\langle \II(X,Y),\II(V,W)\rangle;\]
 see \cite{petrunin2003}.
-Note that it describes the second fundamental form $\II$ up to rotation of the normal space.
-Therefore, once we show that the extrinsic curvature tensor coincides for $f(M)$ and $v(M)$ at one point,
-we get that $f(M)$ and $v(M)$ are congruent.
+Note that it describes the second fundamental form $\II$ up to motion of the ambient space.
+Therefore, once we show that the extrinsic curvature tensors of $M$ and $M'$ coincide at one point,
+we get that $M$ and $M'$ are congruent.
 
 The tensor $\Phi$ can be written as
 \[\Phi(X,Y,V,W)=E(X,Y,V,W)+\tfrac 1 3\cdot(\Rm(X,V,Y,W)+\Rm(X,W,Y,V))\]
@@ -279,15 +273,15 @@ and
 $$\Rm(X,Y,V,W)=\Phi(X,V,Y,W)-\Phi(X,W,Y,V)$$
 is the Riemannian curvature tensor of $M$.
 
-Since both embeddings $v$ and $f$ are isometric, they induce the same Riemannian curvature tensor on $M$.
+Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
 It remains to show that the $E$-tensors are the same.
 But 
 \[f(X)=E(X,X,X,X)\z=|\II(X,X)|^2\]
 is a homogeneous polynomial of degree $4$ on the tangent space 
 and it describes $E$ completely.
-All normal curvatures are equal to 2,
-so $\II(X,X)\z=2\cdot|X|^2$ and $E(X,X,X,X)=4\cdot|X|^4$ 
-for both embeddings and for any $X$.
+Since all normal curvatures are equal to 2,
+we get $\II(X,X)\z=2\cdot|X|^2$ and $E(X,X,X,X)=4\cdot|X|^4$ 
+for both embeddings and for any tangent vector $X$.
 This finishes the proof.
 \qeds
 
@@ -295,21 +289,21 @@ This finishes the proof.
 This note was motivated by the following question \cite{petrunin2023}.
 
 \begin{thm}{Question}
-Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into $r$-balls in Euclidean space of large dimension?
+Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into $\sqrt{n/(2\cdot n+2)}$-balls in a Euclidean space of large dimension?
 \end{thm}
 
 The same question can also be asked about $\CP^n$ and $\HP^n$. 
 A keen reader might have noticed that the case $n=2$ is already solved.
-
-I suspect that the answer to the following question is ``yes''.
 
 \begin{thm}{Question}
 Let $M$ be as in our sphere theorem;
 does it have to be diffeomorphic to the standard $n$-sphere?
 \end{thm}
 
-If, in addition, $M$ lies in the boundary of the $r$-ball, then by the Gauss formula \cite[Lemma 5]{petrunin2024}, its sectional curvature is strictly quarter-pinched;
-in this case, it \textit{is} diffeomorphic to a sphere \cite{brendle-schoen}.
+
+I suspect that the answer is ``yes''.
+If, in addition, $M$ lies in the boundary of the $r$-ball, then by the Gauss formula \cite[Lemma 5]{petrunin2024}, its sectional curvature is strictly quarter-pinched,
+and in this case, it has to be diffeomorphic to a sphere~\cite{brendle-schoen}.
 
 \paragraph{Acknowledgments.}
 I want to thank Alexander Lytchak for help.
