@@ -55,8 +55,8 @@ label.lrt(btex $\Pi$ etex, (0,1.5)*u);
 label(btex $H_x$ etex, (-.8,-1.5)*u);
 label(btex $H_y$ etex, (.8,-1.5)*u);
 label.bot(btex $\gamma$ etex, point .7 of p1);
-label.bot(btex $\gamma_u$ etex, point .5 of p2);
-label.bot(btex $\hat\gamma_u$ etex, point .5 of p2 xscaled -1);
+label.bot(btex $\gamma_{\mathsc{u}}$ etex, point .5 of p2);
+label.bot(btex $\hat\gamma_{\mathsc{u}}$ etex, point .5 of p2 xscaled -1);
 endfig;
 
 

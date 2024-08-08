@@ -104,8 +104,8 @@ denote it by $s$.
 
 
 
-Choose a unit vector $u\in\T_x$;
-let $\gamma_u\:[0,\tfrac\pi2]\to M$ be the unit-speed geodesic that starts from $x$ in the direction $u$, and let $z=\gamma_u(\tfrac\pi2)$.
+Choose a unit vector $\mathsc{u}\in\T_x$;
+let $\gamma_{\mathsc{u}}\:[0,\tfrac\pi2]\to M$ be the unit-speed geodesic that starts from $x$ in the direction ${\mathsc{u}}$, and let $z=\gamma_{\mathsc{u}}(\tfrac\pi2)$.
 The argument above shows that $|x-z|>1$.
 
 Denote by $H_x$ and $H_y$ the closed half-spaces bounded by $\Pi$ that contain $x$ and $y$ respectively.
@@ -113,7 +113,7 @@ Assume $z\in H_x$, then we have $|y-z|\ge |x-z|>1$.
 Since $|x-y|>1$, the triangle $[xyz]$ has all sides larger than $1$,
 which is impossible since $x,y,z\in \BB^d$.
 Therefore, $\gamma_v$ meets $\Pi$ before in $\tfrac\pi2$;
-denote by $r(u)$ be the first such time moment.
+denote by $r({\mathsc{u}})$ be the first such time moment.
 
 \begin{wrapfigure}{r}{44 mm}
 \vskip-0mm
@@ -122,17 +122,17 @@ denote by $r(u)$ be the first such time moment.
 \vskip2mm
 \end{wrapfigure}
 
-Let us show that the function $u\mapsto r(u)$ is smooth.
-In other words, $\gamma_u$ intersects $\Pi$ transversely at time $r(u)$.
-Assume this is not the case, so $\gamma_u$ is tangent to $\Pi$ at $r(u)$.
-Let $\hat\gamma_u$ be the concatenation of the reflection of $\gamma_u|_{[0,r(u)]}$ across $\Pi$ and $\gamma_u|_{[r(u),\frac\pi2]}$.
-Note that $\hat \gamma_u$ is $C^1$-smooth, and it is $C^\infty$-smooth everywhere except $r(u)$.
-Therefore, Schur's bow lemma is applicable to~$\hat \gamma_u$, and hence, $|y-z|>1$.
+Let us show that the function ${\mathsc{u}}\mapsto r({\mathsc{u}})$ is smooth.
+In other words, $\gamma_{\mathsc{u}}$ intersects $\Pi$ transversely at time $r({\mathsc{u}})$.
+Assume this is not the case, so $\gamma_{\mathsc{u}}$ is tangent to $\Pi$ at $r({\mathsc{u}})$.
+Let $\hat\gamma_{\mathsc{u}}$ be the concatenation of the reflection of $\gamma_{\mathsc{u}}|_{[0,r({\mathsc{u}})]}$ across $\Pi$ and $\gamma_{\mathsc{u}}|_{[r({\mathsc{u}}),\frac\pi2]}$.
+Note that $\hat \gamma_{\mathsc{u}}$ is $C^1$-smooth, and it is $C^\infty$-smooth everywhere except $r({\mathsc{u}})$.
+Therefore, Schur's bow lemma is applicable to~$\hat \gamma_{\mathsc{u}}$, and hence, $|y-z|>1$.
 Again, all sides of triangle $[xyz]$ are larger than $1$;
 hence, it cannot lie in $\BB^d$ --- a contradiction.  
 
 It follows that the set 
-\[V_x=\set{t\cdot v\in \T_x}{|u|=1,\quad 0\le t\le a(v),}\]
+\[V_x=\set{t\cdot {\mathsc{u}}\in \T_x}{|{\mathsc{u}}|=1,\quad 0\le t\le r({\mathsc{u}}),}\]
 is diffeomorphic to the closed $n$-disc.
 Denote by $W_x$ the connected component of $x$ in $M\cap H_x$.
 
@@ -254,42 +254,43 @@ Without loss of generality, we can assume that $d>26$, so $M'$ exists.
 Recall that the second fundamental form $\II$ is a bilinear symmetric form on the tangent space with values in the normal space.
 Assume there is a point $p\z\in M\cap M'$ such that $\T_pM=\T_pM'$ and the second fundamental forms of $M$ and $M'$ at $p$ coincide.
 Then $M'\z=M$.
-Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction $X\in \T_p$ is completely described by $\II(X,X)$.
+Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction ${\mathsc{u}}\in \T_p$ is completely described by $\II({\mathsc{u}},{\mathsc{u}})$.
 And these circles sweep the whole $M$ and $M'$.
 
 Recall that the extrinsic curvature tensor $\Phi$ is defined as
-\[\Phi(X,Y,V,W)=\langle \II(X,Y),\II(V,W)\rangle;\]
+\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\langle \II({\mathsc{x}},{\mathsc{y}}),\II({\mathsc{v}},{\mathsc{w}})\rangle;\]
 see \cite{petrunin2003}.
 Note that it describes the second fundamental form $\II$ up to motion of the ambient space.
 Therefore, once we show that the extrinsic curvature tensors of $M$ and $M'$ coincide at one point,
 we get that $M$ and $M'$ are congruent.
 
 The tensor $\Phi$ can be written as
-\[\Phi(X,Y,V,W)=E(X,Y,V,W)+\tfrac 1 3\cdot(\Rm(X,V,Y,W)+\Rm(X,W,Y,V))\]
+\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
 where $E$ is the total symmetrization of $\Phi$; that is,
-$$E(X,Y,V,W)=\tfrac 1 3\cdot
-(\Phi(X,Y,V,W)+\Phi(Y,V,X,W)+\Phi(V,X,Y,W)),$$
+$$E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
+(\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\Phi({\mathsc{y}},{\mathsc{v}},{\mathsc{x}},{\mathsc{w}})+\Phi({\mathsc{v}},{\mathsc{x}},{\mathsc{y}},{\mathsc{w}})),$$
 and
-$$\Rm(X,Y,V,W)=\Phi(X,V,Y,W)-\Phi(X,W,Y,V)$$
+$$\Rm({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\Phi({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})-\Phi({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}})$$
 is the Riemannian curvature tensor of $M$.
 
 Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
 It remains to show that the $E$-tensors are the same.
 But 
-\[f(X)=E(X,X,X,X)\z=|\II(X,X)|^2\]
+\[f({\mathsc{x}})=E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
 is a homogeneous polynomial of degree $4$ on the tangent space 
 and it describes $E$ completely.
 Since all normal curvatures are equal to 2,
-we get $\II(X,X)\z=2\cdot|X|^2$ and $E(X,X,X,X)=4\cdot|X|^4$ 
-for both embeddings and for any tangent vector $X$.
+we get $\II({\mathsc{x}},{\mathsc{x}})\z=2\cdot|{\mathsc{x}}|^2$ and $E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=4\cdot|{\mathsc{x}}|^4$ 
+for both embeddings and for any tangent vector ${\mathsc{x}}$.
 This finishes the proof.
 \qeds
 
 \paragraph{Final remarks.}
 This note was motivated by the following question \cite{petrunin2023}.
+Recall that Veronese embedding maps $\RP^n$, $\CP^n$, and $\HP^n$ into balls of radius $r_n= \sqrt{n/(2\cdot n+2)}$
 
 \begin{thm}{Question}
-Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into $\sqrt{n/(2\cdot n+2)}$-balls in a Euclidean space of large dimension?
+Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into the ball of radius $r_n$ in a Euclidean space of large dimension?
 \end{thm}
 
 The same question can also be asked about $\CP^n$ and $\HP^n$. 
