@@ -154,20 +154,10 @@ That is, $M$ can be obtained by gluing two $n$-discs by a diffeomorphism between
 Hence $M$ is homeomorphic to the $n$-sphere.
 \qeds
 
-\paragraph{Veronese embeddings.}\label{thm:=}
-Our next result is an application of the following theorem;
-its weaker form was proved by Detlef Gromoll and Karsten Grove \cite{gromoll-grove}, and
-the final step was made by Burkhard Wilking \cite{wilking}.
-
-\begin{thm}{Gromoll--Grove--Wilking theorem}\label{thm:GGW}
-Let $M$ be a compact Riemannian manifold with sectional curvature at least $1$ and
-diameter at least $\tfrac\pi2$.
-If $M$ is not homeomorphic to a sphere, then its Riemannian universal cover is isometric to a compact rank-one symmetric space.
-\end{thm}
-
+\paragraph{Veronese embeddings.}\label{veronese}
 Recall that simply connected compact rank-one symmetric spaces include round spheres $\mathbb{S}^n$, complex and quaternionic projective spaces $\CP^n$ and $\HP^n$, and octonionic projective plane $\OP^2$.
-(We will also need the real projective space $\RP^n$, which is a quotient of $\mathbb{S}^n$.)
-Let us assume that each of these spaces is equipped with the canonical metric;
+The projective space $\RP^n$ is the quotient of $\mathbb{S}^n$ by central symmetry.
+Further we will assume that each of these spaces is equipped with the canonical metric;
 so spheres have constant sectional curvature $1$ and the sectional curvature of projective spaces is in the range $[1,4]$.
 In particular, all the projective spaces including $\RP^n$ have closed geodesics of length~$\pi$.
 
@@ -187,24 +177,83 @@ Moreover, the images of these embeddings lie in a sphere of radius $r=\sqrt{n/(2
 
 The proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
 The embeddings provided by the proposition will be called \emph{Veronese embeddings}.
-From the proof below it will be clear that the properties in the proposition uniquely describe
-Veronese embeddings up to motion of ambient space.
 
 The Veronese embeddings have a very explicit algebraic description and many nice geometric properties.
 In particular,
 these embeddings are equivariant, and 
-their images are minimal submanifolds in the described spheres.
+their images are minimal submanifolds in the $r$-spheres.
 All of this is discussed in the cited paper by Kunio Sakamoto.
- 
-Now we are ready to formulate our result.
 
-\begin{thm}{Rigidity theorem}
-Let $M$ be a closed smooth $n$-dimensional submanifold in a closed $r$-ball in $\RR^d$.
-Suppose that the normal curvatures of $M$ are at most $\tfrac2{\sqrt{3}}\cdot\tfrac1r$.
-If $M$ is not homeomorphic to a sphere, then up to rescaling, it is congruent to an image of the Veronese embedding of a projective plane $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
+Let us show that the properties in the proposition uniquely describe
+Veronese embeddings up to motion of the ambient space.
+
+\begin{thm}{Lemma}
+Let $M$ and $M'$ be intrinsically isometric submanifolds in $\RR^d$.
+Suppose that all geodesics in $M$ and $M'$ are closed
+and each geodesic forms a round circle in $\RR^d$.
+Then $M$ is congruent to $M'$;
+that is there is an isometry of $\RR^d$ that maps $M$ to $M'$.
 \end{thm}
 
 \parit{Proof.}
+Recall that the second fundamental form $\II$ is a bilinear symmetric form on the tangent space with values in the normal space.
+Assume there is a point $p\z\in M\cap M'$ such that $\T_pM=\T_pM'$ and the second fundamental forms of $M$ and $M'$ at $p$ coincide.
+Then $M'\z=M$.
+Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction ${\mathsc{u}}\in \T_p$ is completely described by $\II({\mathsc{u}},{\mathsc{u}})$.
+And these circles sweep the whole $M$ and $M'$.
+
+Recall that the extrinsic curvature tensor $\Phi$ of a submanifold $M$ is defined as
+\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\langle \II({\mathsc{x}},{\mathsc{y}}),\II({\mathsc{v}},{\mathsc{w}})\rangle,\]
+here $\mathsc{x}$, $\mathsc{y}$, $\mathsc{v}$, $\mathsc{w}$ are tangent vectors to $M$ at some point; 
+see \cite{petrunin2003}.
+Note that $\Phi$-tensor describes the second fundamental form $\II$ up to motion of the ambient space.
+Therefore, once we show that the $\Phi$-tensors of $M$ and $M'$ coincide at one point,
+we get that $M$ and $M'$ are congruent.
+
+The tensor $\Phi$ can be written as
+\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
+where $E$ is the total symmetrization of $\Phi$; that is,
+$$E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
+(\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\Phi({\mathsc{y}},{\mathsc{v}},{\mathsc{x}},{\mathsc{w}})+\Phi({\mathsc{v}},{\mathsc{x}},{\mathsc{y}},{\mathsc{w}})),$$
+and
+$$\Rm({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\Phi({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})-\Phi({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}})$$
+is the Riemannian curvature tensor of $M$.
+
+Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
+It remains to show that the $E$-tensors are the same.
+But 
+\[f({\mathsc{x}})=E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
+is a homogeneous polynomial of degree $4$ on the tangent space 
+and it describes $E$ completely.
+
+The geodesics in $M$ and $M'$ are closed and have the same length.
+Since each of these geodesic forms a circle in $\RR^d$,
+all these circles have the same curvature, say $\kappa$.
+Therefore, $\II({\mathsc{x}},{\mathsc{x}})\z=\kappa\cdot|{\mathsc{x}}|^2$ and $E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=\kappa^2\cdot|{\mathsc{x}}|^4$ 
+for both submanifolds and for any tangent vector ${\mathsc{x}}$.
+This finishes the proof.
+\qeds
+
+
+\paragraph{Rigidity theorem.}\label{thm:=}
+\textit{Let $M$ be a closed smooth $n$-dimensional submanifold in a closed $r$-ball in $\RR^d$.
+Suppose that the normal curvatures of $M$ are at most $\tfrac2{\sqrt{3}}\cdot\tfrac1r$.
+If $M$ is not homeomorphic to a sphere, then up to rescaling, it is congruent to an image of the Veronese embedding of a projective plane $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.}
+
+\medskip
+
+
+This result is an application of the following theorem;
+its weaker form was proved by Detlef Gromoll and Karsten Grove \cite{gromoll-grove}, and
+the final step was made by Burkhard Wilking \cite{wilking}.
+
+\begin{thm}{Gromoll--Grove--Wilking theorem}\label{thm:GGW}
+Let $M$ be a compact Riemannian manifold with sectional curvature at least $1$ and
+diameter at least $\tfrac\pi2$.
+If $M$ is not homeomorphic to a sphere, then its Riemannian universal cover is isometric to a compact rank-one symmetric space.
+\end{thm}
+
+\parit{Proof of the rigidity theorem.}
 Assume $M$ is not homeomorphic to a sphere;
 in this case, $\dim M\ge 2$.
 As before, $\BB^d$ will denote the $r$-ball in $\RR^d$, and we assume that $r=\tfrac1{\sqrt{3}}$;
@@ -250,39 +299,7 @@ it has to be isometric to $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
 
 Denote by $M'\subset \RR^d$ the image of the corresponding Veronese embedding provided by the proposition.
 Without loss of generality, we can assume that $d>26$, so $M'$ exists.
-
-Recall that the second fundamental form $\II$ is a bilinear symmetric form on the tangent space with values in the normal space.
-Assume there is a point $p\z\in M\cap M'$ such that $\T_pM=\T_pM'$ and the second fundamental forms of $M$ and $M'$ at $p$ coincide.
-Then $M'\z=M$.
-Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction ${\mathsc{u}}\in \T_p$ is completely described by $\II({\mathsc{u}},{\mathsc{u}})$.
-And these circles sweep the whole $M$ and $M'$.
-
-Recall that the extrinsic curvature tensor $\Phi$ is defined as
-\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\langle \II({\mathsc{x}},{\mathsc{y}}),\II({\mathsc{v}},{\mathsc{w}})\rangle;\]
-see \cite{petrunin2003}.
-Note that it describes the second fundamental form $\II$ up to motion of the ambient space.
-Therefore, once we show that the extrinsic curvature tensors of $M$ and $M'$ coincide at one point,
-we get that $M$ and $M'$ are congruent.
-
-The tensor $\Phi$ can be written as
-\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
-where $E$ is the total symmetrization of $\Phi$; that is,
-$$E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
-(\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\Phi({\mathsc{y}},{\mathsc{v}},{\mathsc{x}},{\mathsc{w}})+\Phi({\mathsc{v}},{\mathsc{x}},{\mathsc{y}},{\mathsc{w}})),$$
-and
-$$\Rm({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\Phi({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})-\Phi({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}})$$
-is the Riemannian curvature tensor of $M$.
-
-Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
-It remains to show that the $E$-tensors are the same.
-But 
-\[f({\mathsc{x}})=E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
-is a homogeneous polynomial of degree $4$ on the tangent space 
-and it describes $E$ completely.
-Since all normal curvatures are equal to 2,
-we get $\II({\mathsc{x}},{\mathsc{x}})\z=2\cdot|{\mathsc{x}}|^2$ and $E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=4\cdot|{\mathsc{x}}|^4$ 
-for both embeddings and for any tangent vector ${\mathsc{x}}$.
-This finishes the proof.
+Applying the lemma in §~\ref{veronese}, we get that $M$ is congruent $M'$ --- hence the result. 
 \qeds
 
 \paragraph{Final remarks.}
