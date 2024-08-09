@@ -81,8 +81,8 @@ Then $M$ is homeomorphic to the $n$-sphere.}
 
 \parit{Proof.}
 Denote the $r$-ball by $\BB^d$.
-We can assume that $r=\tfrac1{\sqrt{3}}$;
-therefore, the normal curvatures of $M$ are smaller than $2$.
+We can assume that $r=\tfrac1{\sqrt{3}}$; that is, $r$ is the curcumradius of equilateral triangle with side 1.
+Therefore, the normal curvatures of $M$ are smaller than $2$.
 
 Choose a unit-speed geodesic $\gamma\:[0,\tfrac\pi2]\to M$;
 let $x=\gamma(0)$ and $y=\gamma(\tfrac\pi2)$.
@@ -155,14 +155,14 @@ Hence $M$ is homeomorphic to the $n$-sphere.
 \qeds
 
 \paragraph{Veronese embeddings.}\label{veronese}
-Recall a compact rank-one symmetric spaces is isometric to rescaled copy of one the following spaces:
+Recall that a compact rank-one symmetric spaces is isometric to rescaled copy of one the following spaces:
 unit spheres $\mathbb{S}^n$,
 real, complex, and quaternionic projective spaces $\RP^n$, $\CP^n$ and $\HP^n$,
 and octonionic projective plane $\OP^2$; see for example, \cite[8.12.2]{wolf}.
 We assume that each of these spaces is equipped with the canonical metric;
 so spheres and real projective spaces have constant sectional curvature $1$,
 and the sectional curvature of the remaining projective spaces is in the range $[1,4]$.
-In particular, all the projective space have closed geodesics of length~$\pi$.
+In particular, all the projective spaces have closed geodesics of length~$\pi$.
 
 \begin{thm}{Proposition}
 There are smooth isometric embeddings
@@ -175,65 +175,68 @@ There are smooth isometric embeddings
 that map each geodesic to a round circle.
 
 In particular, all normal curvatures of the images of these embeddings are equal to $2$.
-Moreover, the images of these embeddings lie in a sphere of radius $r=\sqrt{n/(2\cdot n+2)}$ (for $\OP^2$, we assume that $n=2$). 
+Moreover, the images of these embeddings lie in a sphere of radius $r_n=\sqrt{n/(2\cdot n+2)}$ (for $\OP^2$, we assume that $n=2$). 
 \end{thm}
 
 The proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
 The embeddings provided by the proposition will be called \emph{Veronese embeddings}.
+Note that $r_n$ is the circumradius of regular $n$-simplex with edge length~$1$.
 
 The Veronese embeddings have a very explicit algebraic description and many nice geometric properties.
 In particular,
 these embeddings are equivariant, and 
-their images are minimal submanifolds in the $r$-spheres.
+their images are minimal submanifolds in the $r_n$-spheres.
 All of this is discussed in the cited paper by Kunio Sakamoto.
 
 The following lemma is also closely related to the result of Kunio Sakamoto;
-it says that the properties in the proposition uniquely describe
+it implies that the properties in the proposition uniquely describe
 Veronese embeddings up to motion of the ambient space.
 
 \begin{thm}{Lemma}
-Let $M$ and $M'$ be intrinsically isometric submanifolds in $\RR^d$.
+Let $M$ and $M'$ be intrinsically isometric smooth submanifolds in $\RR^d$.
 Suppose that all geodesics in $M$ and $M'$ are closed
 and each geodesic forms a round circle in $\RR^d$.
 Then $M$ is congruent to $M'$;
-that is there is an isometry of $\RR^d$ that maps $M$ to $M'$.
+that is, there is an isometry of $\RR^d$ that maps $M$ to $M'$.
 \end{thm}
 
 \parit{Proof.}
-Recall that the second fundamental form $\II$ is a bilinear symmetric form on the tangent space with values in the normal space.
+Recall that the second fundamental form $\II$ of a submanifold is a bilinear symmetric form on the tangent space with values in the normal space.
 Assume there is a point $p\z\in M\cap M'$ such that $\T_pM=\T_pM'$ and the second fundamental forms of $M$ and $M'$ at $p$ coincide.
 Then $M'\z=M$.
 Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction ${\mathsc{u}}\in \T_p$ is completely described by $\II({\mathsc{u}},{\mathsc{u}})$.
 And these circles sweep the whole $M$ and $M'$.
 
-Recall that the extrinsic curvature tensor $\Phi$ of a submanifold $M$ is defined as
+Recall that the extrinsic curvature tensor $\Phi$ of a submanifold is defined as
 \[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\langle \II({\mathsc{x}},{\mathsc{y}}),\II({\mathsc{v}},{\mathsc{w}})\rangle,\]
-here $\mathsc{x}$, $\mathsc{y}$, $\mathsc{v}$, $\mathsc{w}$ are tangent vectors to $M$ at some point; 
+here $\mathsc{x}$, $\mathsc{y}$, $\mathsc{v}$, $\mathsc{w}$ are tangent vectors to the submanifold at some point; 
 see \cite{petrunin2003}.
 Note that $\Phi$-tensor describes the second fundamental form $\II$ up to motion of the ambient space.
 Therefore, once we show that the $\Phi$-tensors of $M$ and $M'$ coincide at one point,
 we get that $M$ and $M'$ are congruent.
 
 The tensor $\Phi$ can be written as
-\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
-where $E$ is the total symmetrization of $\Phi$; that is,
-$$E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
+\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})
+=
+\E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
+where $\E$ is the total symmetrization of $\Phi$; that is,
+$$\E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
 (\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\Phi({\mathsc{y}},{\mathsc{v}},{\mathsc{x}},{\mathsc{w}})+\Phi({\mathsc{v}},{\mathsc{x}},{\mathsc{y}},{\mathsc{w}})),$$
 and
 $$\Rm({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\Phi({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})-\Phi({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}})$$
 is the Riemannian curvature tensor of $M$.
 
 Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
-It remains to show that the $E$-tensors are the same.
+It remains to show that the $\E$-tensors are the same.
 But 
-\[f({\mathsc{x}})=E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
+\[f({\mathsc{x}})=\E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
 is a homogeneous polynomial of degree $4$ on the tangent space 
-and it describes $E$ completely.
+and it describes $\E$ completely.
 
 The geodesics in $M$ and $M'$ are closed and have the same length.
 Since each of these geodesic forms a circle in $\RR^d$,
 all these circles have the same curvature, say $\kappa$.
-Therefore, $\II({\mathsc{x}},{\mathsc{x}})\z=\kappa\cdot|{\mathsc{x}}|^2$ and $E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=\kappa^2\cdot|{\mathsc{x}}|^4$ 
+Therefore, $\II({\mathsc{x}},{\mathsc{x}})\z=\kappa\cdot|{\mathsc{x}}|^2$ and $\E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=\kappa^2\cdot|{\mathsc{x}}|^4$ 
 for both submanifolds and for any tangent vector ${\mathsc{x}}$.
 This finishes the proof.
 \qeds
@@ -263,6 +266,8 @@ in this case, $\dim M\ge 2$.
 As before, $\BB^d$ will denote the $r$-ball in $\RR^d$, and we assume that $r=\tfrac1{\sqrt{3}}$;
 therefore, the normal curvatures of $M$ are at most $2$.
 
+By the proposition in §~\ref{veronese}, the images of Veronese embedding satisfy the assumption of the theorem.
+It remains to show that there are no other embeddings of that type.
 
 
 Choose a unit-speed geodesic $\gamma\:[0,\tfrac\pi2]\to M$;
@@ -285,7 +290,7 @@ the equalities $|x-y|=|y-z|=|x-z|=1$ imply that $x\in \partial \BB^d$.
 The choice of $x\in M$ was arbitrary.
 Therefore, $M$ lies in the sphere $\partial \BB^d$ of radius $r=1/\sqrt{3}$.
 This sphere has sectional curvature $1/r^2=3$;
-the normal curvatures of $M$ in the sphere are $\kappa=\sqrt{2^2-1/r^2}=1$.
+all normal curvatures of $M$ in the sphere are $\kappa=\sqrt{2^2-1/r^2}=1$.
 By the Gauss formula \cite[Lemma 5]{petrunin2024}, the sectional curvatures of $M$ are at least $3-2\cdot \kappa^2=1$.
 
 By the Gromoll--Grove--Wilking theorem, the universal cover $\tilde M$ of $M$ is isometric to a rank-one symmetric space.
@@ -301,14 +306,14 @@ Hence, $\tilde M$ must be isometric to one of the following spaces $\mathbb{S}^2
 Since the injectivity radius of $M$ is $\tfrac\pi2$, 
 it has to be isometric to $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
 
-Denote by $M'\subset \RR^d$ the image of the corresponding Veronese embedding provided by the proposition.
-Without loss of generality, we can assume that $d>26$, so $M'$ exists.
+Denote by $M'\subset \RR^d$ the image of the corresponding Veronese embedding provided by the proposition in §~\ref{veronese}.
+Without loss of generality, we can assume that $d$ is large, so $M'$ exists.
 Applying the lemma in §~\ref{veronese}, we get that $M$ is congruent $M'$ --- hence the result. 
 \qeds
 
 \paragraph{Final remarks.}
-This note was motivated by the following question \cite{petrunin2023}.
-Recall that Veronese embedding maps $\RP^n$, $\CP^n$, and $\HP^n$ into balls of radius $r_n= \sqrt{n/(2\cdot n+2)}$
+Recall that Veronese embedding maps $\RP^n$, $\CP^n$, and $\HP^n$ into balls of radius $r_n= \sqrt{n/(2\cdot n+2)}$, which is circumradius of regular $n$-simplex with edge length~$1$.
+This note was motivated by the following question~\cite{petrunin2023}.
 
 \begin{thm}{Question}
 Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into the ball of radius $r_n$ in a Euclidean space of large dimension?
@@ -322,9 +327,8 @@ Let $M$ be as in our sphere theorem;
 does it have to be diffeomorphic to the standard $n$-sphere?
 \end{thm}
 
-
 I suspect that the answer is ``yes''.
-If, in addition, $M$ lies in the boundary of the $r$-ball, then by the Gauss formula \cite[Lemma 5]{petrunin2024}, its sectional curvature is strictly quarter-pinched,
+If, in addition, $M$ lies in the boundary of the $r$-ball, then by the Gauss formula \cite[Lemma 5]{petrunin2024}, its curvature is strictly quarter-pinched,
 and in this case, it has to be diffeomorphic to a sphere~\cite{brendle-schoen}.
 
 \paragraph{Acknowledgments.}
