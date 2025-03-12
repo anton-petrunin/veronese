@@ -55,14 +55,14 @@ Assume $d$ is large and $M$ lies in an $r$-ball.
 
 First note that the curvatures cannot be smaller than $\tfrac1r$ at all points.
 Moreover, 
-\textit{the average value of $|H|$ must be at least $n\cdot\tfrac1r$};
-here $H$ denotes the mean curvature vector \cite[28.2.5]{burago-zalgaller}, \cite[3.1]{petrunin2024a}.
+\textit{the average value of $|H|$ must be at least $n\cdot\tfrac1r$} \cite[28.2.5]{burago-zalgaller}, \cite[3.1]{petrunin2024a};
+here $H$ denotes the mean curvature vector.
 This statement is a straightforward generalization of the result of István Fáry about closed curves in a ball \cite{fary,tabachnikov}.
 
 On the other hand, the $n$-dimensional torus can be embedded into an $r$-ball with all normal curvatures $\sqrt{3\cdot n/(n+2)}\cdot\tfrac1r$.
 This embedding was found by Michael Gromov
 \cite[2.A]{gromov3}, \cite[1.1.A]{gromov2}.
-The bound is optimal; that is, any smooth $n$-dimensional torus in an $r$-ball has normal curvature at least $\sqrt{3\cdot n/(n+2)}\cdot\tfrac1r$ at some point
+The bound is optimal; that is, \textit{any smooth $n$-dimensional torus in an $r$-ball has normal curvature at least $\sqrt{3\cdot n/(n+2)}\cdot\tfrac1r$ at some point}
 \cite{petrunin2024a}.
 Gromov's examples easily imply the following:
 any closed smooth manifold $M$ admits a smooth embedding into an $r$-ball of sufficiently large dimension with normal curvatures less than $\sqrt{3}\cdot\tfrac1r$
@@ -94,7 +94,7 @@ By the assumption, the curvature of $\gamma$ in $\RR^d$ is less than~$2$.
 Applying Schur's bow lemma, we get $|x-y|>1$.
 
 Let $\Pi$ be the perpendicular bisector to $[x,y]$.
-Since the curvature of $\gamma$ is smaller than 2, if $t\ne t_0$, then
+Since the curvature of $\gamma$ is smaller than 2, if $t\ne t_0$, we have
 \[\measuredangle(\gamma'(t_0),\gamma'(t))< 2\cdot|t-t_0|
 \quad\text{and}\quad
 \langle \gamma'(t_0),\gamma'(t) \rangle> \cos (2\cdot|t-t_0|).\]
@@ -116,7 +116,7 @@ Denote by $H_x$ and $H_y$ the closed half-spaces bounded by $\Pi$ that contain $
 Assume $z\in H_x$, then we have $|y-z|\ge |x-z|>1$.
 Since $|x-y|>1$, the triangle $[xyz]$ has all sides larger than $1$,
 which is impossible since $x,y,z\in \BB^d$.
-Therefore, $\gamma_{\mathsc{u}}$ meets $\Pi$ before in $\tfrac\pi2$;
+Therefore, $\gamma_{\mathsc{u}}$ meets $\Pi$ before $\tfrac\pi2$;
 denote by $r({\mathsc{u}})$ be the first such time moment.
 
 \begin{wrapfigure}{r}{36 mm}
@@ -188,8 +188,8 @@ the images of these embeddings lie in a sphere of radius $r_n=\sqrt{n/(2\cdot n+
 
 The proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
 The embeddings provided by the proposition will be called \emph{Veronese embeddings}.
-Note that $r_n$ is the circumradius of a regular $n$-simplex with edge length~$1$.
-Note that $r_2=1/\sqrt{3}$; therefore, the second part of proposition shows that our sphere theorem has the optimal bound. 
+Note that $r_n$ is the circumradius of a regular $n$-simplex with unit edge, and $r_2=1/\sqrt{3}$.
+Therefore, the second part of proposition shows that our sphere theorem has the optimal bound.
 
 The Veronese embeddings have a very explicit algebraic description and many nice geometric properties.
 In particular,
@@ -197,8 +197,9 @@ these embeddings are equivariant, and
 their images are minimal submanifolds in the $r_n$-spheres.
 All of this is discussed in the cited paper by Kunio Sakamoto.
 
-The following lemma is also closely related to the result of Kunio Sakamoto;
-it implies that the properties in the proposition uniquely describe
+We give a complete proof of the next lemma,
+but it follows from the result of Kunio Sakamoto and also from the earlier result of John Little \cite{little}.
+This lemma implies that the properties in the proposition uniquely describe
 Veronese embeddings up to motion of the ambient space.
 
 \begin{thm}{Lemma}
@@ -326,9 +327,21 @@ Without loss of generality, we can assume that $d$ is large, so $M'$ exists.
 Applying the lemma in §~\ref{veronese}, we get that $M$ is congruent $M'$ --- hence the result. 
 \qeds
 
+Ricardo Mendes pointed out that the following corollary, from the result of John Little \cite{little}, can replace the Gromoll--Grove--Wilking theorem in the proof.
+
+\begin{thm}{Corollary}
+Let $M$ be a closed $n$-dimensional submanifold in $\RR^d$.
+Suppose that $n \ge 2$ and every geodesic in $M$ is a planar circle of radius $\tfrac12$.
+Then $M$ is either a round sphere of radius $\tfrac12$ or one of the Veronese embeddings described in §~\ref{veronese}.
+\end{thm}
+
+Namely, let us follow the proof above.
+Once we know that all geodesics in $M$ are circles of curvature 2, we can apply the corollary.
+It then remains to exclude the Veronese embeddings of $\RP^n$, $\CP^n$, and $\HP^n$ for $n>2$, which can be done the same way.
+
 \paragraph{Final remarks.}
 Recall that the Veronese embeddings map $\RP^n$, $\CP^n$, and $\HP^n$ into balls of radius $r_n= \sqrt{n/(2\cdot n+2)}$, which is the circumradius of a regular $n$-simplex with edge length~$1$.
-This note is motivated by the following question~\cite{petrunin2023}.
+This note is motivated by the following question; see \cite[1.4]{petrunin2024a} and \cite{petrunin2023}.
 
 \begin{thm}{Question}
 Is it true that the Veronese embedding minimizes the maximal normal curvature among all smooth embeddings of $\RP^n$ into the ball of radius $r_n$ in a Euclidean space of large dimension?
@@ -336,6 +349,14 @@ Is it true that the Veronese embedding minimizes the maximal normal curvature am
 
 The same question can be asked about $\CP^n$ and $\HP^n$. 
 A keen reader might have noticed that the case $n=2$ is already solved.
+
+Gromov's construction gives many smooth immersions of the torus $\TT^n$ into $r$-balls with normal curvatures $\tfrac1r\cdot\sqrt{3\cdot n/(n+2)}$ in all directions.
+The proof of the theorem in \cite{petrunin2024a} implies that such immersions send torus to the boundary of the ball and it tell exactly what is its second fundamenal form.
+Nevertheless the following question is open.
+
+\begin{thm}{Question}
+Can one describe all smooth immersions $\TT^n$ into $r$-balls with normal curvatures $\tfrac1r\cdot\sqrt{3\cdot n/(n+2)}$ in all directions?
+\end{thm}
 
 \begin{thm}{Question}
 Let $M$ be as in our sphere theorem;
@@ -347,7 +368,7 @@ If, in addition, $M$ lies on the boundary of the $r$-ball, then by the Gauss for
 so, it has to be diffeomorphic to a standard sphere~\cite{brendle-schoen}.
 
 \paragraph{Acknowledgments.}
-I want to thank Alexander Lytchak for help.
+I want to thank Alexander Lytchak and Ricardo Mendes for their help.
 This work was partially supported by the National Science Foundation, grant DMS-2005279.
 
 {\sloppy
