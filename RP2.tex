@@ -197,60 +197,16 @@ these embeddings are equivariant, and
 their images are minimal submanifolds in the $r_n$-spheres.
 All of this is discussed in the cited paper by Kunio Sakamoto.
 
-We give a complete proof of the next lemma,
-but it follows from the result of Kunio Sakamoto and also from the earlier result of John Little \cite{little}.
-This lemma implies that the properties in the proposition uniquely describe
-Veronese embeddings up to motion of the ambient space.
+We will need the following claim, which is a special case of the theorem by John Little \cite{little}.
+It also follows from the more general results of Kunio Sakamoto in the referenced paper.
 
-\begin{thm}{Lemma}
-Let $M$ and $M'$ be intrinsically isometric smooth submanifolds in $\RR^d$.
-Suppose that all geodesics in $M$ and $M'$ are closed
-and each geodesic forms a round circle in $\RR^d$.
-Then $M$ is congruent to $M'$;
-that is, there is an isometry of $\RR^d$ that maps $M$ to $M'$.
+\begin{thm}{Claim}
+Let $M$ be a closed $n$-dimensional submanifold in $\RR^d$.
+Suppose that $n \ge 2$ and every geodesic in $M$ is a planar circle of radius $\tfrac12$.
+Then $M$ is either a round sphere of radius $\tfrac12$ or one of the Veronese embeddings described above.
 \end{thm}
 
-\parit{Proof.}
-Recall that the second fundamental form $\II$ of a submanifold is a bilinear symmetric form on the tangent space with values in the normal space.
-Assume there is a common point $p$ on $M$ and $M'$ 
-with common tangent space $\T_pM\z=\T_pM'$ and such that the second fundamental forms of $M$ and $M'$ at $p$ coincide.
-Then $M'\z=M$.
-Indeed, since every geodesic is mapped to a round circle, the image of a geodesic in direction ${\mathsc{u}}\in \T_p$ is completely described by $\II({\mathsc{u}},{\mathsc{u}})$.
-And these circles sweep the whole $M$ and $M'$.
 
-Recall that the extrinsic curvature tensor $\Phi$ of a submanifold is defined as
-\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\langle \II({\mathsc{x}},{\mathsc{y}}),\II({\mathsc{v}},{\mathsc{w}})\rangle,\]
-here $\mathsc{x}$, $\mathsc{y}$, $\mathsc{v}$, $\mathsc{w}$ are tangent vectors to the submanifold at some point; 
-see \cite{petrunin2003}.
-Note that the $\Phi$-tensor describes the second fundamental form $\II$ up to motion of the ambient space.
-Therefore, once we show that the $\Phi$-tensors of $M$ and $M'$ coincide at one point,
-we get that $M$ and $M'$ are congruent.
-
-The tensor $\Phi$ can be written as
-\[\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})
-=
-\E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\tfrac 1 3\cdot(\Rm({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})+\Rm({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}}))\]
-where $\E$ is the total symmetrization of $\Phi$; that is,
-$$\E({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\tfrac 1 3\cdot
-(\Phi({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})+\Phi({\mathsc{y}},{\mathsc{v}},{\mathsc{x}},{\mathsc{w}})+\Phi({\mathsc{v}},{\mathsc{x}},{\mathsc{y}},{\mathsc{w}})),$$
-and
-$$\Rm({\mathsc{x}},{\mathsc{y}},{\mathsc{v}},{\mathsc{w}})=\Phi({\mathsc{x}},{\mathsc{v}},{\mathsc{y}},{\mathsc{w}})-\Phi({\mathsc{x}},{\mathsc{w}},{\mathsc{y}},{\mathsc{v}})$$
-is the Riemannian curvature tensor of $M$.
-
-Since $M$ is isometric to $M'$, they have the same Riemannian curvature tensors.
-It remains to show that the $\E$-tensors are the same.
-But 
-\[f({\mathsc{x}})=\E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})\z=|\II({\mathsc{x}},{\mathsc{x}})|^2\]
-is a homogeneous polynomial of degree $4$ on the tangent space 
-and it describes $\E$ completely.
-
-The geodesics in $M$ and $M'$ are closed and have the same length.
-Since each of these geodesic forms a circle in $\RR^d$,
-all these circles have the same curvature, say $\kappa$.
-Therefore, $\II({\mathsc{x}},{\mathsc{x}})\z=\kappa\cdot|{\mathsc{x}}|^2$ and $\E({\mathsc{x}},{\mathsc{x}},{\mathsc{x}},{\mathsc{x}})=\kappa^2\cdot|{\mathsc{x}}|^4$ 
-for both submanifolds and for any tangent vector ${\mathsc{x}}$.
-This finishes the proof.
-\qeds
 
 
 \paragraph{Rigidity theorem.}\label{thm:=}
@@ -260,84 +216,30 @@ If $M$ is not homeomorphic to a sphere, then up to rescaling, it is congruent to
 
 \medskip
 
-
-This result is an application of the following theorem;
-its weaker form was proved by Detlef Gromoll and Karsten Grove \cite{gromoll-grove}, and
-the final step was made by Burkhard Wilking \cite{wilking}.
-
-\begin{thm}{Gromoll--Grove--Wilking theorem}\label{thm:GGW}
-Let $M$ be a compact Riemannian manifold with sectional curvature at least $1$ and
-diameter at least $\tfrac\pi2$.
-If $M$ is not homeomorphic to a sphere, then its Riemannian universal cover is isometric to a compact rank-one symmetric space.
-\end{thm}
-
-Recall that a compact rank-one symmetric space is isometric to a rescaled copy of one of the following spaces:
-$\RP^n$, $\CP^n$, $\HP^n$, $\OP^2$, and unit spheres $\mathbb{S}^n$; see for example, \cite[8.12.2]{wolf}.
-As before we assume that these spaces are equipped with the canonical metrics;
-in particular, all the projective spaces have closed geodesics of length~$\pi$.
-
 \parit{Proof of the rigidity theorem.}
-Assume $M$ is not homeomorphic to a sphere;
-in this case, $n\ge 2$.
-As before, $\BB^d$ will denote the $r$-ball in $\RR^d$, and we assume that $r=\tfrac1{\sqrt{3}}$;
-therefore, the normal curvatures of $M$ are at most $2$.
+Assume that \( M \) is not homeomorphic to a sphere;
+in this case, \( n \ge 2 \).
+As before, let \( \BB^d \) denote the \( r \)-ball in \( \RR^d \), where we assume \( r = \tfrac{1}{\sqrt{3}} \);
+therefore, the normal curvatures of \( M \) are at most 2.
 
-By the proposition in §~\ref{veronese}, the images of Veronese embedding satisfy the assumption of the theorem.
-It remains to show that there are no other embeddings of that type.
+By the proposition in §~\ref{veronese}, the images of the Veronese embedding of the projective planes satisfy the assumptions of the theorem.
+It remains to show that no other embeddings of this type exist.
+
+Choose a unit-speed geodesic \( \gamma : [0, \tfrac{\pi}{2}] \to M \);
+let \( x = \gamma(0) \) and \( y = \gamma(\tfrac{\pi}{2}) \).
+The argument in our sphere theorem implies that \( |x-y| = 1 \).
+The rigidity case in the bow lemma implies that \( \gamma \) is a half-circle of curvature 2.
+Since any two points in \( M \) can be connected by a geodesic, we conclude that all geodesics in \( M \) are circles of curvature 2 in \( \RR^d \).
 
 
-Choose a unit-speed geodesic $\gamma\:[0,\tfrac\pi2]\to M$;
-let $x=\gamma(0)$ and $y=\gamma(\tfrac\pi2)$.
-The argument in our sphere theorem implies that $|x-y|=1$.
-The rigidity case in the bow lemma implies that $\gamma$ is a half-circle of curvature $2$.
-Since any two points in $M$ can be connected by a geodesic, we get the following.
-\begin{itemize}
- \item The diameter of $M$ is 1.
- \item The intrinsic diameter and injectivity radius of $M$ are equal to $\tfrac\pi2$.
- \item All geodesics in $M$ are circles of curvature 2 in $\RR^d$.
-\end{itemize}
+Since \( M \) is not a sphere, the claim in §~\ref{veronese} implies that \( M \) is given by one of the Veronese embeddings of \( \RP^n \), \( \CP^n \), \( \HP^n \) for \( n \ge 2 \), or \( \OP^2 \).
 
-Furthermore, for $x$ and $y$ as above,
-there is another point $z\in M$ such that $|x-z|=|y-z|=1$.
-If not, then again, the argument in the sphere theorem would imply that $M$ is a sphere.
-But since $x,y,z\in\BB^d$,
-the equalities $|x-y|=|y-z|=|x-z|=1$ imply that $x\in \partial \BB^d$.
-
-The choice of $x\in M$ was arbitrary.
-Therefore, $M$ lies in the sphere $\partial \BB^d$ of radius $r=1/\sqrt{3}$.
-This sphere has sectional curvature $1/r^2=3$;
-all normal curvatures of $M$ in the sphere are $\kappa=\sqrt{2^2-1/r^2}=1$.
-By the Gauss formula \cite[Lemma 5]{petrunin2024}, the sectional curvatures of $M$ are at least $3-2\cdot \kappa^2=1$.
-
-By the Gromoll--Grove--Wilking theorem, the universal cover $\tilde M$ of $M$ is isometric to a rank-one symmetric space.
-Taking into account the injectivity radius and curvature of $M$, we get that $\tilde M$ must be isometric to one of the following spaces
-$\tfrac12\cdot \SSS^n$, $\SSS^n$, $\CP^n$, $\HP^n$ for some $n$, or $\OP^2$.
-Note that the points $x,y,z\in M$ constructed above lie at an intrinsic distance $\tfrac\pi2$ from each other.
-It forbids $\tfrac12\cdot \SSS^n$ for every $n$.
-Furthermore, if $n\ge 3$, then each space  $\SSS^n$, $\CP^n$ and $\HP^n$ contain 4 points at a distance $\tfrac\pi2$ from each other.
-Since the injectivity radius of $M$ is $\tfrac\pi2$, their projections in $M$ must lie at a distance $\tfrac\pi2$ from each other as well.
-It follows that $\BB^d$ must contain 4 points at a distance 1 from each other, which is impossible.
-
-Hence, $\tilde M$ must be isometric to one of the following spaces $\mathbb{S}^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
-Since the injectivity radius of $M$ is $\tfrac\pi2$, 
-it has to be isometric to $\RP^2$, $\CP^2$, $\HP^2$, or $\OP^2$.
-
-Denote by $M'\subset \RR^d$ the image of the corresponding Veronese embedding provided by the proposition in §~\ref{veronese}.
-Without loss of generality, we can assume that $d$ is large, so $M'$ exists.
-Applying the lemma in §~\ref{veronese}, we get that $M$ is congruent $M'$ --- hence the result. 
+It remains to show that \( n \le 2 \).
+Assume the contrary.
+Then each space \( \RP^n \), \( \CP^n \), and \( \HP^n \) contains four points at a distance \( \tfrac{\pi}{2} \) from one another.
+The corresponding points would lie at a distance 1 in \( \BB^d \), which is impossible.
 \qeds
 
-Ricardo Mendes pointed out that the following corollary, from the result of John Little \cite{little}, can replace the Gromoll--Grove--Wilking theorem in the proof.
-
-\begin{thm}{Corollary}
-Let $M$ be a closed $n$-dimensional submanifold in $\RR^d$.
-Suppose that $n \ge 2$ and every geodesic in $M$ is a planar circle of radius $\tfrac12$.
-Then $M$ is either a round sphere of radius $\tfrac12$ or one of the Veronese embeddings described in §~\ref{veronese}.
-\end{thm}
-
-Namely, let us follow the proof above.
-Once we know that all geodesics in $M$ are circles of curvature 2, we can apply the corollary.
-It then remains to exclude the Veronese embeddings of $\RP^n$, $\CP^n$, and $\HP^n$ for $n>2$, which can be done the same way.
 
 \paragraph{Final remarks.}
 Recall that the Veronese embeddings map $\RP^n$, $\CP^n$, and $\HP^n$ into balls of radius $r_n= \sqrt{n/(2\cdot n+2)}$, which is the circumradius of a regular $n$-simplex with edge length~$1$.
@@ -363,12 +265,15 @@ Let $M$ be as in our sphere theorem;
 does it have to be diffeomorphic to the standard $n$-sphere?
 \end{thm}
 
-I suspect that the answer is \textit{yes}.
+I suspect that the answer to the last question is \textit{yes}.
 If, in addition, $M$ lies on the boundary of the $r$-ball, then by the Gauss formula \cite[Lemma 5]{petrunin2024}, $M$  has strictly quarter-pinched curvature;
 so, it has to be diffeomorphic to a standard sphere~\cite{brendle-schoen}.
 
 \paragraph{Acknowledgments.}
 I want to thank Alexander Lytchak and Ricardo Mendes for their help.
+The proof of the rigidity theorem was suggested by Ricardo Mendes.
+My original proof was based on the diameter-rigidity theorem proved by Detlef Gromoll, Karsten Grove and Burkhard Wilking \cite{gromoll-grove,wilking}.
+
 This work was partially supported by the National Science Foundation, grant DMS-2005279.
 
 {\sloppy
