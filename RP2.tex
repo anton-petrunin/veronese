@@ -2,12 +2,7 @@
 \usepackage{paper-en}
 \usepackage{hyperref}
 
-
-
-
 %\usepackage[notref,notcite,color]{showkeys}
-
-
 
 %\def\thetitle{Mildly curved submanifolds in a ball}
 \def\thetitle{Veronese minimizes normal curvatures}
@@ -39,7 +34,8 @@ pdfauthor={\theauthors}
 
 
 \title{\thetitle}
-\author{\theauthors}
+\author{\theauthors
+\blfootnote{This work was partially supported by the National Science Foundation, grant DMS-2005279.}}
 \date{}
 \maketitle
 
@@ -50,19 +46,20 @@ The border cases consist of Veronese embeddings of the four projective planes.
 \end{abstract}
 
 \paragraph{Introduction.}
-Let \( M \subset \RR^d \) be a closed smooth \( n \)-dimensional submanifold.
-Assume that \( d \) is large and \( M \) lies in an \( r \)-ball.
-\textit{What can be said about the normal curvatures of \( M \)?}
+Let \( M \subset \mathbb{R}^d \) be a closed smooth \( n \)-dimensional submanifold.
+Assume that \( d \) is large and \( M \) is contained in a ball of radius \( r \).
+\textit{What can be said about the maximal normal curvature of \( M \)?}
+In other words, \textit{what can be said about the maximal curvature of geodesics in \( M \) when considered as curves in \( \mathbb{R}^d \)?}
 
 First, note that the curvatures cannot be smaller than \( \tfrac{1}{r} \) at all points.
 Moreover,
-\textit{the average value of \( |H| \) must be at least \( n \cdot \tfrac{1}{r} \)} \cite[28.2.5]{burago-zalgaller}, \cite[3.1]{petrunin2024a},
-where \( H \) denotes the mean curvature vector.
+\textit{the average value of \( |H| \) must be at least \( n \cdot \tfrac{1}{r} \)} \cite[28.2.5]{burago-zalgaller}, \cite[3.1]{petrunin2024a};
+here \( H \) denotes the mean curvature vector.
 This statement is a straightforward generalization of István Fáry's result about closed curves in a ball \cite{fary,tabachnikov}.
 
 On the other hand, the \(n\)-dimensional torus can be embedded into an \(r\)-ball with all normal curvatures equal to \( \sqrt{3 \cdot n / (n + 2)} \cdot \tfrac{1}{r} \).
 This embedding was discovered by Michael Gromov \cite[2.A]{gromov3}, \cite[1.1.A]{gromov2}.
-This bound is optimal; that is, \textit{any smooth \(n\)-dimensional torus in an \(r\)-ball must have normal curvature at least \( \sqrt{3 \cdot n / (n + 2)} \cdot \tfrac{1}{r} \) at some point} \cite{petrunin2024a}.
+This bound is optimal; that is, \textit{any smooth \(n\)-dimensional torus in an \(r\)-ball must have normal curvature at least \( \sqrt{3 \cdot n / (n + 2)} \cdot \tfrac{1}{r} \) at some point}~\cite{petrunin2024a}.
 
 Gromov's examples easily imply the following:
 \textit{any closed smooth manifold \( M \) admits a smooth embedding into an \(r\)-ball of sufficiently large dimension with normal curvatures less than \( \sqrt{3} \cdot \tfrac{1}{r} \)}
@@ -77,14 +74,31 @@ For the non-strict inequality, in addition to spheres, the possible cases includ
 
 \paragraph{Sphere theorem.}
 \label{thm:strict}
-\textit{Let \( M \) be a closed smooth \( n \)-dimensional submanifold contained in a closed \( r \)-ball in \( \RR^d \).
+\textit{Let \( M \) be a closed smooth \( n \)-dimensional submanifold contained in a closed \( r \)-ball in \( \mathbb{R}^d \).
 Suppose the normal curvatures of \( M \) are strictly less than \( \tfrac{2}{\sqrt{3}} \cdot \tfrac{1}{r} \).
 Then \( M \) is homeomorphic to the \( n \)-sphere.}
 
+\medskip
 
 
-\parit{Proof.}
-We may assume that \( n \ge 2 \);
+In the proof we will use the following version of Axel Schur's lemma \cite{shur}.
+
+\begin{thm}{Bow lemma}
+Let $\gamma_1\:[a,b]\to\mathbb{R}^2$ and $\gamma_2\:[a,b] \to\mathbb{R}^d$ be two $C^{1,1}$-smooth unit-speed curves.
+Suppose that curvature of $\gamma_1$ does not exceed the curvature of $\gamma_2$ at any time moment
+and the curve
+$\gamma_1$ is an arc of a convex curve; that is, it runs in the boundary of a convex plane figure.
+Then the distance between the endpoints of $\gamma_1$ cannot exceed the  distance between the endpoints of $\gamma_2$; that is,
+\[|\gamma_1(b)-\gamma_1(a)|\leqslant |\gamma_2(b)-\gamma_2(a)|.\]
+
+Moreover, in case of equality, $\gamma_2=\iota \circ \gamma_1$ for some isometry $\iota$ from $\mathbb{R}^2$ to a plane in $\mathbb{R}^d$.
+\end{thm}
+
+The first part of the lemma follows from \cite[Theorem 5.1]{sullivan}, and the equality case follows from its proof.
+
+
+\parit{Proof of the sphere theorem.}
+We may assume that \( n \geqslant 2 \);
 otherwise, there is nothing to prove.
 
 Denote the \( r \)-ball by \( \mathbb{B}^d \).
@@ -93,8 +107,8 @@ Consequently, the normal curvatures of \( M \) are less than 2.
 
 Choose a unit-speed geodesic \( \gamma\colon  [0, \tfrac{\pi}{2}] \to M \);
 let \( x = \gamma(0) \) and \( y = \gamma(\tfrac{\pi}{2}) \).
-By assumption, the curvature of \( \gamma \) in \( \RR^d \) is less than 2.
-Applying Schur's bow lemma, we obtain \( |x - y| > 1 \).
+By assumption, the curvature of \( \gamma \) in \( \mathbb{R}^d \) is less than 2.
+Applying the bow lemma, we obtain \( |x - y| > 1 \).
 
 Let $\Pi$ be the perpendicular bisector of $[x,y]$.
 Since the curvature of $\gamma$ is less than $2$,
@@ -106,7 +120,7 @@ Since the curvature of $\gamma$ is less than $2$,
 if $t \ne t_0$.
 Therefore,
 \[
-\langle y - x, \gamma'(t_0) \rangle > \int\limits_0^{\frac{\pi}{2}} \cos(2 \cdot |t - t_0|) \cdot dt \geq 0.
+\langle y - x, \gamma'(t_0) \rangle > \int\limits_0^{\frac{\pi}{2}} \cos(2 \cdot |t - t_0|) \cdot dt \geqslant 0.
 \]
 In particular, the derivative of the function
 $f \colon t \mapsto \langle y - x, \gamma(t) \rangle$
@@ -120,7 +134,7 @@ The argument above shows that $|x - z| > 1$.
 Denote by $H_x$ and $H_y$ the closed half-spaces bounded by $\Pi$ containing $x$ and $y$, respectively.
 Assume $z\in H_x$.
 Then
-$|y - z| \ge |x - z| > 1$.
+$|y - z| \geqslant |x - z| > 1$.
 Since $|x - y| > 1$, the triangle $[xyz]$ has all sides greater than $1$, which is impossible because $x, y, z \in \mathbb{B}^d$.
 Therefore, $\gamma_{\mathsc{u}}$ meets $\Pi$ before $\tfrac{\pi}{2}$; denote by $r(\mathsc{u})$ the first such time.
 
@@ -136,20 +150,19 @@ In other words, $\gamma_{\mathsc{u}}$ intersects $\Pi$ transversely at time $r(\
 Assume this is not the case, then $\gamma_{\mathsc{u}}$ is tangent to $\Pi$ at $r(\mathsc{u})$.
 Let $\hat{\gamma}_{\mathsc{u}}$ be the concatenation of the reflection of $\gamma_{\mathsc{u}}|_{[0, r(\mathsc{u})]}$ across $\Pi$ and $\gamma_{\mathsc{u}}|_{[r(\mathsc{u}), \frac{\pi}{2}]}$.
 Note that $\hat{\gamma}_{\mathsc{u}}$ is $C^1$-smooth and $C^\infty$-smooth everywhere except at $r(\mathsc{u})$.
-Therefore, Schur's bow lemma applies to $\hat{\gamma}_{\mathsc{u}}$, and hence $|y - z| \z> 1$.
+Therefore, the bow lemma applies to $\hat{\gamma}_{\mathsc{u}}$, and hence $|y - z| \z> 1$.
 Again, all sides of the triangle $[xyz]$ are greater than $1$; hence, it cannot lie in $\mathbb{B}^d$ --- a contradiction.
 
 It follows that the set
 \[
-V_x = \set{t \cdot \mathsc{u} \in \T_x}{|\mathsc{u}| = 1, \quad 0 \le t \le r(\mathsc{u})}
+V_x = \set{t \cdot \mathsc{u} \in \T_x}{|\mathsc{u}| = 1, \quad 0 \leqslant t \leqslant r(\mathsc{u})}
 \]
 is diffeomorphic to the closed \(n\)-disc.
 Denote by \(W_x\) the connected component of \(M \cap H_x\) that contains \(x\).
 
 By the Gauss formula \cite[Lemma 5]{petrunin2024}, the sectional curvatures of \(M\) are less than \(4\).
 In particular, the exponential map \(\exp_x \colon \T_x \to M\) is a local diffeomorphism within the \(\tfrac{\pi}{2}\)-ball centered at the origin in \(\T_x\).
-
-It follows that the exponential map $\exp_x$ defines a local diffeomorphism $V_x \to W_x$.
+It follows that the exponential map defines a local diffeomorphism $V_x \to W_x$.
 In particular, $W_x$ is a smooth manifold with boundary.
 Since $V_x$ is simply connected, $\exp_x$ defines a diffeomorphism between $V_x$ and $W_x$.
 Thus, $W_x$ is a closed topological $n$-disc, and $\partial W_x$ is a smooth hypersurface in $M$.
@@ -171,17 +184,17 @@ We assume that each of these spaces is equipped with the canonical metric; in pa
 \begin{thm}{Proposition}
 There are smooth isometric embeddings
 \begin{itemize}
- \item $\RP^n \hookrightarrow\RR^d$ for $d\ge n+\tfrac12\cdot n\cdot(n+1)$;
- \item $\CP^n \hookrightarrow\RR^d$ for $d\ge n+n\cdot(n+1)$;
- \item $\HP^n \hookrightarrow\RR^d$ for $d\ge n+2\cdot n\cdot(n+1)$;
- \item $\OP^2 \hookrightarrow\RR^d$ for $d\ge 26$;
+ \item $\RP^n \hookrightarrow\mathbb{R}^d$ for $d\geqslant n+\tfrac12\cdot n\cdot(n+1)$;
+ \item $\CP^n \hookrightarrow\mathbb{R}^d$ for $d\geqslant n+n\cdot(n+1)$;
+ \item $\HP^n \hookrightarrow\mathbb{R}^d$ for $d\geqslant n+2\cdot n\cdot(n+1)$;
+ \item $\OP^2 \hookrightarrow\mathbb{R}^d$ for $d\geqslant 26$;
 \end{itemize}
 that map each geodesic to a round circle.
 
 Moreover,
 
 \begin{subthm}{2}
-all normal curvatures of the images under these embeddings are equal to~2.
+all normal curvatures of the images under these embeddings are equal to~2,
 \end{subthm}
 
 \begin{subthm}{r}
@@ -192,7 +205,7 @@ the images of these embeddings lie on a sphere of radius \( r_n = \sqrt{n / (2 \
 
 \end{thm}
 
-The proposition can be extracted from two theorems in \cite[§ 2]{sakamoto}.
+This proposition, along with a detailed proof, is given in Kunio Sakamoto's paper \cite[§ 2]{sakamoto}.
 These embeddings will be referred to as \emph{Veronese embeddings}.
 Note that \( r_n \) is the circumradius of a regular \( n \)-simplex with unit edge length, and \(r_2 = 1 / \sqrt{3}\).
 Thus, the second part of the proposition implies that our sphere theorem is optimal.
@@ -201,9 +214,7 @@ The Veronese embeddings have an explicit algebraic description and possess sever
 In particular, these embeddings are equivariant, and their images are minimal submanifolds in the \( r_n \)-spheres.
 All of these properties are discussed in the cited paper by Kunio Sakamoto.
 
-We will need the following claim, which is a special case of John Little's theorem \cite{little}.
-It also follows from the more general results of Kunio Sakamoto from the same paper.
-
+We will need the following claim, which is a special case of John Little's theorem \cite{little} and the more general results of Kunio Sakamoto \cite[Theorem 3]{sakamoto}.
 
 \begin{thm}{Claim}
 Let \( M \) be a closed  submanifold in \( \mathbb{R}^d \).
@@ -221,35 +232,35 @@ If \( M \) is not homeomorphic to a sphere, then up to rescaling, it is congruen
 
 \medskip
 
-\parit{Proof of the rigidity theorem.}
+\parit{Proof.}
 Assume that \( M \) is not homeomorphic to a sphere;
-in this case, \( n \ge 2 \).
-As before, let \( \mathbb{B}^d \) denote the \( r \)-ball in \( \RR^d \), where we assume \( r = \tfrac{1}{\sqrt{3}} \);
+in this case, \( n \geqslant 2 \).
+As before, let \( \mathbb{B}^d \) denotes the \( r \)-ball in \( \mathbb{R}^d \), where we assume \( r = \tfrac{1}{\sqrt{3}} \);
 therefore, the normal curvatures of \( M \) are at most 2.
 
 By the proposition in §~\ref{veronese}, the images of the Veronese embedding of the projective planes satisfy the assumptions of the theorem.
 It remains to show that no other embeddings of this type exist.
 
-Choose a unit-speed geodesic \( \gamma : [0, \tfrac{\pi}{2}] \to M \);
+Choose a unit-speed geodesic \( \gamma \colon [0, \tfrac{\pi}{2}] \to M \);
 let \( x = \gamma(0) \) and \( y = \gamma(\tfrac{\pi}{2}) \).
 The argument in our sphere theorem implies that \( |x-y| = 1 \).
 The rigidity case in the bow lemma implies that \( \gamma \) is a half-circle of curvature 2.
-Since any two points in \( M \) can be connected by a geodesic, we conclude that all geodesics in \( M \) are circles of curvature 2 in \( \RR^d \).
+Since any two points in \( M \) can be connected by a geodesic, we conclude that all geodesics in \( M \) are circles of curvature 2 in \( \mathbb{R}^d \).
 
 
-Since \( M \) is not a sphere, the claim in §~\ref{veronese} implies that \( M \) is given by one of the Veronese embeddings of \( \RP^n \), \( \CP^n \), \( \HP^n \) for \( n \ge 2 \), or \( \OP^2 \).
+Since \( M \) is not a sphere, the claim in §~\ref{veronese} implies that \( M \) is given by one of the Veronese embeddings of \( \RP^n \), \( \CP^n \), \( \HP^n \) for \( n \geqslant 2 \), or \( \OP^2 \).
 
-It remains to show that \( n \le 2 \).
+It remains to show that \( n \leqslant 2 \).
 Assume the contrary.
-Then each space \( \RP^n \), \( \CP^n \), and \( \HP^n \) contains four points at a distance \( \tfrac{\pi}{2} \) from one another.
+Note that if $n\geqslant 3$, then each space \( \RP^n \), \( \CP^n \), and \( \HP^n \) contains four points at a distance \( \tfrac{\pi}{2} \) from one another.
 The corresponding points would lie at a distance 1 in \( \mathbb{B}^d \), which is impossible.
 \qeds
 
 
 \paragraph{Final remarks.}
 Recall that the Veronese embeddings map \( \RP^n \), \( \CP^n \), and \( \HP^n \) into balls of radius \( r_n = \sqrt{n/(2\cdot n + 2)} \), which is the circumradius of a regular \( n \)-simplex with unit edge length.
-This note is motivated by the following question; see \cite[1.4]{petrunin2024a} and \cite{petrunin2023}.
 
+This note is motivated by the following question; see \cite[1.4]{petrunin2024a} and \cite{petrunin2023}.
 
 \begin{thm}{Question}
 Is it true that the Veronese embedding minimizes the maximum normal curvature among all smooth embeddings of \(\RP^n\) into an \(r_n\)-ball in a Euclidean space of sufficiently large dimension?
@@ -281,7 +292,7 @@ Therefore, in this case, the answer is \textit{yes} by the differentiable sphere
 \paragraph{Acknowledgments.}
 I would like to thank Alexander Lytchak and Ricardo Mendes for their help.
 The proof of the rigidity theorem was suggested by Ricardo Mendes.
-My original proof was based on the diameter-rigidity theorem, which was proven by Detlef Gromoll, Karsten Grove, and Burkhard Wilking \cite{gromoll-grove,wilking}.
+My original proof was based on the diameter-rigidity theorem \cite{gromoll-grove,wilking}.
 
 This work was partially supported by the National Science Foundation, grant DMS-2005279.
 

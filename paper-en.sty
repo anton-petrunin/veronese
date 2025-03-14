@@ -227,6 +227,12 @@ isbn=false]{biblatex}
 {\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
 \item [\arabic{subthmN})]}}{\end{itemize}}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 \makeatletter
 \newcommand\xhookrightarrow[2][]{%
@@ -234,6 +240,8 @@ isbn=false]{biblatex}
 \newcommand\longhookrightarrowfill@{%
   \arrowfill@\hook\relbar\rightarrow}
 \makeatother
+
+
 
 \hyphenation{
 Kapo-vitch
